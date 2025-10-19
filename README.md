@@ -5,7 +5,7 @@
    2) rename_column.sql - Безопасное переименование колонок
    3) alter_column.sql - Если столбец существует мы сделаем безопасное ALTER COLUMN
    4) indexing.sql - Создаем индексы для того, чтобы ускорить чтение данных
-   5) unique restrictions.sql -
+   5) unique restrictions.sql - Уникальные ограничения
 3. loading test data.sql -
 4. Написать 5 T-SQL произвольных аналитических запросов на отображение сводных данных.
    1) first_query.sql -
