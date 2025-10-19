@@ -1,4 +1,4 @@
--- Загрузим тестовых данных 
+-- Р—Р°РіСЂСѓР·РёРј С‚РµСЃС‚РѕРІС‹С… РґР°РЅРЅС‹С…
 IF NOT EXISTS (SELECT 1 FROM dbo.Bicycle)
 BEGIN
     INSERT INTO Bicycle (Brand, RentPrice) VALUES
@@ -8,7 +8,7 @@ BEGIN
     ('Merida Crossway', 6.00),
     ('Cube Nature', 5.50),
     ('Cannondale Quick', 8.00);
-    PRINT 'Вставлены данные в Bicycle';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ Bicycle';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.Client)
@@ -19,7 +19,7 @@ BEGIN
     ('John', 'US3333333', '+12025550123', 'US'),
     ('Anna', 'CC4444444', '+77001230000', 'KZ'),
     ('Pavel', 'DD5555555', '+77009998877', 'RU');
-    PRINT 'Вставлены данные в Client';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ Client';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.Staff)
@@ -29,7 +29,7 @@ BEGIN
     ('Marina', 'STF002', DATEADD(year, -1, DATEADD(day, -5, SYSUTCDATETIME()))),
     ('Sergey', 'STF003', DATEADD(year, -3, SYSUTCDATETIME())),
     ('Alina', 'STF004', DATEADD(year, -2, DATEADD(day, 30, SYSUTCDATETIME())));
-    PRINT 'Вставлены данные в Staff';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ Staff';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.Detail)
@@ -40,7 +40,7 @@ BEGIN
     ('KMC', 'Chain', 'Z8.3', 10.00),
     ('Shimano', 'BrakePads', 'BR-6100', 15.00),
     ('Generic', 'Tire', 'CityTire', 20.00);
-    PRINT 'Вставлены данные в Detail';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ Detail';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.DetailForBicycle)
@@ -52,7 +52,7 @@ BEGIN
     (4,5),
     (5,3),(5,4),
     (6,2),(6,1);
-    PRINT 'Вставлены данные в DetailForBicycle';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ DetailForBicycle';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.RentBook)
@@ -65,7 +65,7 @@ BEGIN
     (DATEADD(day, -10, SYSUTCDATETIME()), 1, 6, 5, 1, 3),
     (DATEADD(day, -5, SYSUTCDATETIME()), 8, 3, 2, 1, 1),
     (DATEADD(day, -2, SYSUTCDATETIME()), 2, 4, 1, 1, 4);
-    PRINT 'Вставлены данные в RentBook';
+    PRINT 'Р’СЃС‚Р°РІР»РµРЅС‹ РґР°РЅРЅС‹Рµ РІ RentBook';
 END
 
 IF NOT EXISTS (SELECT 1 FROM dbo.ServiceBook)
@@ -77,6 +77,7 @@ BEGIN
     (1,5, DATEADD(day, -12, SYSUTCDATETIME()), 25.00, 2),
     (6,2, DATEADD(day, -8, SYSUTCDATETIME()), 80.00, 3),
     (5,3, DATEADD(day, -3, SYSUTCDATETIME()), 20.00, 4);
-    PRINT 'Вставлены данные в ServiceBook';
+    PRINT 'Г‚Г±ГІГ ГўГ«ГҐГ­Г» Г¤Г Г­Г­Г»ГҐ Гў ServiceBook';
 END
+
 GO
