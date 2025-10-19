@@ -67,7 +67,8 @@ IF NOT EXISTS (SELECT 1 FROM sys.foreign_keys WHERE parent_object_id = OBJECT_ID
 BEGIN
     ALTER TABLE dbo.RentBook
     ADD CONSTRAINT FK_RentBook_Staff FOREIGN KEY (StaffId) REFERENCES dbo.Staff(Id);
-    PRINT 'Äîáàâëåí FK_RentBook_Staff';
+    PRINT 'Добавлен FK_RentBook_Staff';
 END
 
 GO
+
