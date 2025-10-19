@@ -77,7 +77,8 @@ BEGIN
     (1,5, DATEADD(day, -12, SYSUTCDATETIME()), 25.00, 2),
     (6,2, DATEADD(day, -8, SYSUTCDATETIME()), 80.00, 3),
     (5,3, DATEADD(day, -3, SYSUTCDATETIME()), 20.00, 4);
-    PRINT 'Âñòàâëåíû äàííûå â ServiceBook';
+    PRINT 'Вставлены данные в ServiceBook';
 END
 
 GO
+
