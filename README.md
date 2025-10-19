@@ -1,7 +1,7 @@
 Задание №1
 1. table_creation.sql - процесс создания таблицы;
 2. Предложение улучшения существующей схемы и типов данных таблиц.
-   1) data_integrity.sql -
+   1) data_integrity.sql - Обеспечил целостность данных с безопасными проверками
    2) rename_column.sql -
    3) alter_column.sql -
    4) indexing.sql -
