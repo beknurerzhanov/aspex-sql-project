@@ -1,7 +1,7 @@
--- 4. Если столбец существует мы сделаем безопасное ALTER COLUMN и защитим от несовместимых данных пропущена намеренно,
--- при ошибке ALTER нам можно воспользоваться временными колонками
-/* Этот код безопасно изменяет типы и ограничения колонок в таблицах, делая структуру базы данных более надёжной, гибкой и
-корректной для бизнес-логики, при этом проверяя наличие каждой колонки перед изменением.*/
+-- Р•СЃР»Рё СЃС‚РѕР»Р±РµС† СЃСѓС‰РµСЃС‚РІСѓРµС‚ РјС‹ СЃРґРµР»Р°РµРј Р±РµР·РѕРїР°СЃРЅРѕРµ ALTER COLUMN Рё Р·Р°С‰РёС‚РёРј РѕС‚ РЅРµСЃРѕРІРјРµСЃС‚РёРјС‹С… РґР°РЅРЅС‹С… РїСЂРѕРїСѓС‰РµРЅР° РЅР°РјРµСЂРµРЅРЅРѕ,
+-- РїСЂРё РѕС€РёР±РєРµ ALTER РЅР°Рј РјРѕР¶РЅРѕ РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РІСЂРµРјРµРЅРЅС‹РјРё РєРѕР»РѕРЅРєР°РјРё;
+/* РўСѓС‚ Р±РµР·РѕРїР°СЃРЅРѕ РёР·РјРµРЅСЏРµС‚СЃСЏ С‚РёРїС‹ Рё РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РєРѕР»РѕРЅРѕРє РІ С‚Р°Р±Р»РёС†Р°С…, РґРµР»Р°СЏ СЃС‚СЂСѓРєС‚СѓСЂСѓ Р±Р°Р·С‹ РґР°РЅРЅС‹С… Р±РѕР»РµРµ РЅР°РґС‘Р¶РЅРѕР№, РіРёР±РєРѕР№ Рё
+РєРѕСЂСЂРµРєС‚РЅРѕР№ РґР»СЏ Р±РёР·РЅРµСЃ-Р»РѕРіРёРєРё, РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РЅР°Р»РёС‡РёРµ РєР°Р¶РґРѕР№ РєРѕР»РѕРЅРєРё РїРµСЂРµРґ РёР·РјРµРЅРµРЅРёРµРј.*/
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Bicycle' AND COLUMN_NAME='Brand')
     ALTER TABLE dbo.Bicycle ALTER COLUMN Brand VARCHAR(100) NOT NULL;
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Bicycle' AND COLUMN_NAME='RentPrice')
@@ -27,4 +27,5 @@ IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Detail' AN
     ALTER TABLE dbo.Detail ALTER COLUMN Name VARCHAR(100) NOT NULL;
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Detail' AND COLUMN_NAME='Price')
     ALTER TABLE dbo.Detail ALTER COLUMN Price MONEY NOT NULL;
+
 GO
