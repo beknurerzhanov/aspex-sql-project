@@ -8,7 +8,7 @@
    5) unique restrictions.sql - Уникальные ограничения.
 3. loading test data.sql - Сгенерировал тестовые данные в таблицы.
 4. Написать 5 T-SQL произвольных аналитических запросов на отображение сводных данных.
-   1) first_query.sql -
+   1) first_query.sql - Топ-5 рентабельных велосипедов.
    2) second_query.sql -
    3) third_query.sql -
    4) fourth_query.sql -
