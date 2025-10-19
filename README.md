@@ -3,7 +3,7 @@
 2. Предложение улучшения существующей схемы и типов данных таблиц.
    1) data_integrity.sql - Обеспечил целостность данных с безопасными проверками
    2) rename_column.sql - Безопасное переименование колонок
-   3) alter_column.sql -
+   3) alter_column.sql - Если столбец существует мы сделаем безопасное ALTER COLUMN
    4) indexing.sql -
    5) unique restrictions.sql -
 3. loading test data.sql -
