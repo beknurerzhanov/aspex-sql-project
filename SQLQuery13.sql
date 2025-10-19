@@ -1,5 +1,5 @@
--- 3 пример: Премии сотрудников за месяц по формуле  X = (P1*X1 + P2*X2)*X0, где P1 – стоимость аренды, 
--- X1 – процент премии от аренды, P2 – стоимость ремонта, X2 – процент премии от ремонта, X0 – процент премии от стажа.
+-- 3 РїСЂРёРјРµСЂ: РџСЂРµРјРёРё СЃРѕС‚СЂСѓРґРЅРёРєРѕРІ Р·Р° РјРµСЃСЏС† РїРѕ С„РѕСЂРјСѓР»Рµ  X = (P1*X1 + P2*X2)*X0, РіРґРµ P1 вЂ“ СЃС‚РѕРёРјРѕСЃС‚СЊ Р°СЂРµРЅРґС‹, 
+-- X1 вЂ“ РїСЂРѕС†РµРЅС‚ РїСЂРµРјРёРё РѕС‚ Р°СЂРµРЅРґС‹, P2 вЂ“ СЃС‚РѕРёРјРѕСЃС‚СЊ СЂРµРјРѕРЅС‚Р°, X2 вЂ“ РїСЂРѕС†РµРЅС‚ РїСЂРµРјРёРё РѕС‚ СЂРµРјРѕРЅС‚Р°, X0 вЂ“ РїСЂРѕС†РµРЅС‚ РїСЂРµРјРёРё РѕС‚ СЃС‚Р°Р¶Р°.
 DECLARE @Y INT = YEAR(GETDATE()), @M INT = MONTH(GETDATE());
 ;WITH RentPerStaff AS (
   SELECT r.StaffId, SUM(b.RentPrice * r.DurationHours) AS RentSum
@@ -23,4 +23,5 @@ SELECT st.Id StaffId, st.Name StaffName, ISNULL(rp.RentSum,0) RentSum, ISNULL(sp
 FROM dbo.Staff st
 LEFT JOIN RentPerStaff rp ON rp.StaffId = st.Id
 LEFT JOIN RepairPerStaff sp ON sp.StaffId = st.Id
+
 ORDER BY BonusAmount DESC;
