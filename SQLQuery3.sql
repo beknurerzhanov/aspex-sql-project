@@ -1,19 +1,20 @@
--- 3. Áåçîïàñíîå ïåðåèìåíîâàíèå êîëîíîê
+-- Ð‘ÐµÐ·Ð¾Ð¿Ð°ÑÐ½Ð¾Ðµ Ð¿ÐµÑ€ÐµÐ¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ ÐºÐ¾Ð»Ð¾Ð½Ð¾Ðº
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Client' AND COLUMN_NAME='Phone number')
 BEGIN
     EXEC sp_rename 'dbo.Client.[Phone number]', 'PhoneNumber', 'COLUMN';
-    PRINT 'Ïåðåèìåíîâàí Client.[Phone number] -> PhoneNumber';
+    PRINT 'ÃÃ¥Ã°Ã¥Ã¨Ã¬Ã¥Ã­Ã®Ã¢Ã Ã­ Client.[Phone number] -> PhoneNumber';
 END
 
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Staff' AND COLUMN_NAME='Date')
 BEGIN
     EXEC sp_rename 'dbo.Staff.[Date]', 'HireDate', 'COLUMN';
-    PRINT 'Ïåðåèìåíîâàí Staff.[Date] -> HireDate';
+    PRINT 'ÃÃ¥Ã°Ã¥Ã¨Ã¬Ã¥Ã­Ã®Ã¢Ã Ã­ Staff.[Date] -> HireDate';
 END
 
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='RentBook' AND COLUMN_NAME='Time')
 BEGIN
     EXEC sp_rename 'dbo.RentBook.[Time]', 'DurationHours', 'COLUMN';
-    PRINT 'Ïåðåèìåíîâàí RentBook.[Time] -> DurationHours';
+    PRINT 'ÃÃ¥Ã°Ã¥Ã¨Ã¬Ã¥Ã­Ã®Ã¢Ã Ã­ RentBook.[Time] -> DurationHours';
 END
 GO
+
