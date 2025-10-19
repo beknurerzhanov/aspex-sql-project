@@ -1,5 +1,5 @@
 -- Если столбец существует мы сделаем безопасное ALTER COLUMN и защитим от несовместимых данных пропущена намеренно,
--- при ошибке ALTER нам можно воспользоваться временными колонками;
+-- при ошибке ALTER нам можно воспользоваться временными колонками.
 /* Тут безопасно изменяется типы и ограничения колонок в таблицах, делая структуру базы данных более надёжной, гибкой и
 корректной для бизнес-логики, проверяется наличие каждой колонки перед изменением.*/
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Bicycle' AND COLUMN_NAME='Brand')
@@ -29,3 +29,4 @@ IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Detail' AN
     ALTER TABLE dbo.Detail ALTER COLUMN Price MONEY NOT NULL;
 
 GO
+
