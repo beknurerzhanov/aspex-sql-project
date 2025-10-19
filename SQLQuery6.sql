@@ -1,10 +1,10 @@
--- Если нет дубликатов, нам можно сделать уникальные ограничения по паспорту
+-- Р•СЃР»Рё РЅРµС‚ РґСѓР±Р»РёРєР°С‚РѕРІ, РЅР°Рј РјРѕР¶РЅРѕ СЃРґРµР»Р°С‚СЊ СѓРЅРёРєР°Р»СЊРЅС‹Рµ РѕРіСЂР°РЅРёС‡РµРЅРёСЏ РїРѕ РїР°СЃРїРѕСЂС‚Сѓ
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name='UQ_Client_Passport' AND object_id = OBJECT_ID('dbo.Client'))
 BEGIN
     IF NOT EXISTS (SELECT Passport FROM dbo.Client GROUP BY Passport HAVING COUNT(*) > 1)
         ALTER TABLE dbo.Client ADD CONSTRAINT UQ_Client_Passport UNIQUE (Passport);
     ELSE
-        PRINT 'Не добавлен UQ_Client_Passport — найдены дубликаты';
+        PRINT 'РќРµ РґРѕР±Р°РІР»РµРЅ UQ_Client_Passport, РЅР°Р№РґРµРЅС‹ РґСѓР±Р»РёРєР°С‚С‹';
 END
 
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name='UQ_Staff_Passport' AND object_id = OBJECT_ID('dbo.Staff'))
@@ -12,6 +12,7 @@ BEGIN
     IF NOT EXISTS (SELECT Passport FROM dbo.Staff GROUP BY Passport HAVING COUNT(*) > 1)
         ALTER TABLE dbo.Staff ADD CONSTRAINT UQ_Staff_Passport UNIQUE (Passport);
     ELSE
-        PRINT 'Не добавлен UQ_Staff_Passport — найдены дубликаты';
+        PRINT 'РќРµ РґРѕР±Р°РІР»РµРЅ UQ_Client_Passport, РЅР°Р№РґРµРЅС‹ РґСѓР±Р»РёРєР°С‚С‹';
 END
+
 GO
