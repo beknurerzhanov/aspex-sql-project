@@ -1,4 +1,4 @@
--- Создаем индексы для улучшения запросов
+-- Создаем индексы для того, чтобы ускорить чтение данных
 IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name='IX_RentBook_Date' AND object_id = OBJECT_ID('dbo.RentBook'))
     CREATE INDEX IX_RentBook_Date ON dbo.RentBook([Date]);
 
@@ -12,3 +12,4 @@ IF NOT EXISTS (SELECT 1 FROM sys.indexes WHERE name='IX_ServiceBook_StaffId' AND
     CREATE INDEX IX_ServiceBook_StaffId ON dbo.ServiceBook(StaffId);
 
 GO
+
