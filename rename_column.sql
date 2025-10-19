@@ -1,4 +1,7 @@
 -- Безопасное переименование колонок
+/* Нужен, чтобы переименовать неудобные или некорректно названные колонки, а также с пробелами или непонятными именами в таблицах.
+Так таблицы становятся удобнее для работы и запросы чище и понятнее, 
+а скрипты безопаснее, так как перед переименованием проверяется, существует ли у нас колонка. */
 IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME='Client' AND COLUMN_NAME='Phone number')
 BEGIN
     EXEC sp_rename 'dbo.Client.[Phone number]', 'PhoneNumber', 'COLUMN';
@@ -17,5 +20,6 @@ BEGIN
     PRINT 'Переименован RentBook.[Time] -> DurationHours';
 END
 GO
+
 
 
