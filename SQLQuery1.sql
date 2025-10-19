@@ -1,4 +1,4 @@
--- Процесс создания таблицы если не существует
+-- Процесс создания таблицы
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Bicycle' AND TABLE_SCHEMA='dbo')
 BEGIN
 CREATE TABLE dbo.Bicycle
@@ -87,5 +87,6 @@ CREATE TABLE dbo.RentBook
 PRINT 'Создана таблица RentBook';
 END
 GO
+
 
 
