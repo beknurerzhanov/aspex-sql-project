@@ -1,4 +1,4 @@
--- 1. Процесс создания таблицы если не существует
+-- РџСЂРѕС†РµСЃСЃ СЃРѕР·РґР°РЅРёСЏ С‚Р°Р±Р»РёС†С‹ РµСЃР»Рё РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Bicycle' AND TABLE_SCHEMA='dbo')
 BEGIN
 CREATE TABLE dbo.Bicycle
@@ -7,7 +7,7 @@ CREATE TABLE dbo.Bicycle
    Brand VARCHAR(100) NOT NULL,
    RentPrice MONEY NOT NULL
 );
-PRINT 'Создана таблица Bicycle';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° Bicycle';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Client' AND TABLE_SCHEMA='dbo')
@@ -20,7 +20,7 @@ CREATE TABLE dbo.Client
    PhoneNumber VARCHAR(30) NULL,
    Country VARCHAR(100) NULL
 );
-PRINT 'Создана таблица Client';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° Client';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Staff' AND TABLE_SCHEMA='dbo')
@@ -32,7 +32,7 @@ CREATE TABLE dbo.Staff
    Passport VARCHAR(50) NOT NULL,
    HireDate DATETIME2 NULL
 );
-PRINT 'Создана таблица Staff';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° Staff';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Detail' AND TABLE_SCHEMA='dbo')
@@ -45,7 +45,7 @@ CREATE TABLE dbo.Detail
    Name VARCHAR(100) NOT NULL,
    Price MONEY NOT NULL
 );
-PRINT 'Создана таблица Detail';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° Detail';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'DetailForBicycle' AND TABLE_SCHEMA='dbo')
@@ -55,7 +55,7 @@ CREATE TABLE dbo.DetailForBicycle
    BicycleId INT NOT NULL,
    DetailId INT NOT NULL
 );
-PRINT 'Создана таблица DetailForBicycle';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° DetailForBicycle';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ServiceBook' AND TABLE_SCHEMA='dbo')
@@ -69,7 +69,7 @@ CREATE TABLE dbo.ServiceBook
    Price MONEY NOT NULL,
    StaffId INT NOT NULL
 );
-PRINT 'Создана таблица ServiceBook';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° ServiceBook';
 END
 
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'RentBook' AND TABLE_SCHEMA='dbo')
@@ -84,7 +84,8 @@ CREATE TABLE dbo.RentBook
    ClientId INT NOT NULL,
    StaffId INT NOT NULL
 );
-PRINT 'Создана таблица RentBook';
+PRINT 'РЎРѕР·РґР°РЅР° С‚Р°Р±Р»РёС†Р° RentBook';
 END
 GO
+
 
