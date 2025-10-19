@@ -1,4 +1,4 @@
--- Создаем витрины BonusMart
+-- РЎРѕР·РґР°РµРј РІРёС‚СЂРёРЅС‹ BonusMart
 IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME='BonusMart' AND TABLE_SCHEMA='dbo')
 BEGIN
 CREATE TABLE dbo.BonusMart
@@ -15,6 +15,7 @@ CREATE TABLE dbo.BonusMart
     LoadDate DATETIME2 NOT NULL DEFAULT SYSUTCDATETIME(),
     CONSTRAINT UQ_BonusMart_Staff_Year_Month UNIQUE (StaffId, [Year], [Month])
 );
-PRINT 'Создана витрина BonusMart';
+PRINT 'РЎРѕР·РґР°РЅР° РІРёС‚СЂРёРЅР° BonusMart';
 END
+
 GO
